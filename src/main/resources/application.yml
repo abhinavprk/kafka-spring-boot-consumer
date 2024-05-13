@@ -1,0 +1,10 @@
+server:
+  port: 9192
+  servlet:
+    context-path: /kafka
+
+spring:
+  kafka:
+    producer:
+      bootstrap-server: localhost:9092
+      group-id: news
