@@ -3,10 +3,15 @@ server:
   servlet:
     context-path: /kafka
 
-#spring:
-#  kafka:
-#    producer:
-#      bootstrap-server: localhost:9092
-#      group-id: my-customer, my-cricket
-#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+spring:
+  kafka:
+    consumer:
+      bootstrap-server: localhost:9092
+      group-id: my-customer, my-cricket
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: org.kafka.producer.dto
